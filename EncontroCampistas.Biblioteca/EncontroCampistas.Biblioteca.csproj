@@ -69,11 +69,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entidades\Campista.cs" />
+    <Compile Include="Entidades\Foto.cs" />
+    <Compile Include="Entidades\MembroEquipe.cs" />
+    <Compile Include="Entidades\Tribo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorio\CampistasRepositorio.cs" />
+    <Compile Include="Repositorio\EFDbContext.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entidades\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
