@@ -5,7 +5,7 @@ namespace EncontroCampistas.Biblioteca.Entidades
 {
     public class Campista
     {
-        #region propriedades
+        #region propriedades  
         [Key]
         public int CampistaID { get; set; }
         
