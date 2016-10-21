@@ -1,0 +1,53 @@
+﻿@model EncontroCampistas.WebSite.Web.Models.CarrinhoViewModel
+@{
+    ViewBag.Title = "Suas inscrições";
+}
+
+<style>
+    #cartTable td {
+        vertical-align: middle;
+    }
+</style>
+
+<h2>Suas incrições</h2>
+<table id="cartTable" class="table">
+    <thead>
+        <tr>
+            <th>Evento</th>
+            <th>Local</th>
+            <th>Data e Hora</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Carrinho.ItensCarrinho)
+        {
+            <tr>
+                <td class="text-left">@item.Descricao</td>
+                <td class="text-left">@item.Local</td>
+                <td class="text-left">@item.DataHoraRealizacao</td>
+                <td>
+                    @using (Html.BeginForm("Remover", "Carrinho"))
+                    {
+                        @Html.Hidden("EventoId", item.EventoId)
+                        @Html.HiddenFor(x => x.ReturnUrl)
+                        <input class="btn btn-sm btn-warning" type="submit" value="Remover" />
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="2" class="text-right">Total de eventos inscritos</td>
+            <td class="text-right">
+                @Model.Carrinho.ItensCarrinho.Count
+            </td>
+        </tr>
+    </tfoot>
+</table>
+<div class="text-center">
+    <a class="btn btn-primary" href="@Model.ReturnUrl">
+        Continuar selecionando
+    </a>
+    @Html.ActionLink("Fechar incrições", "FecharPedido", "Carrinho", new { @class = "btn btn-primary" })
+</div>

@@ -1,0 +1,27 @@
+﻿@using EncontroCampistas.WebSite.Site.HtmlHelpers
+@model EncontroCampistas.WebSite.Web.Models.EventosViewModel
+
+@foreach (var e in Model.Eventos)
+{
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">@e.Descricao</h3>
+            @using (Html.BeginForm("Adicionar", "Carrinho"))
+            {
+                <div class="pull-right">
+                    @Html.Hidden("eventoId", e.EventoId)
+                    @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                    <input type="submit" class="btn btn-success" value="Participar" />
+                </div>
+            }
+
+        </div>
+        <div class="panel-body">
+            @e.Local
+        </div>
+        <div class="panel-footer">@e.DataHoraRealizacao</div>
+    </div>
+}
+<div class="btn-group pull-right">
+    @Html.PageLinks(Model.Paginacao, x => Url.Action("ListaEventos", new { pagina = x, tipoEvento = Model.EventoAtual }))
+</div>

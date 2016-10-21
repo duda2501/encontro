@@ -1,0 +1,10 @@
+﻿@using EncontroCampistas.WebSite.Site.HtmlHelpers
+@model EncontroCampistas.WebSite.Web.Models.CampistasViewModel
+
+@foreach (var c in Model.Campistas)
+{
+    @Html.Partial("CampistaDetalhes", c)
+}
+<div class="btn-group pull-right">
+    @Html.PageLinks(Model.Paginacao, x => Url.Action("ListaCampistas", new { pagina = x }))
+</div>

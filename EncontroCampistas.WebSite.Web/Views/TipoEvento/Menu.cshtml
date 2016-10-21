@@ -1,0 +1,18 @@
+﻿@model EncontroCampistas.WebSite.Web.Models.TipoEventoViewModel
+
+@Html.ActionLink("Todos os eventos", "ListaEventos", "Eventos", null, new { @class = "btn btn-block btn-default btn-lg"})
+
+@foreach (var link in Model.TipoEventos)
+{
+    @Html.RouteLink(link.DescricaoTipoEvento, new
+{
+    controller = "Eventos",
+    action = "ListaEventos",
+    tipoEvento = link.TipoEventoId,
+    pagina=1
+}, new
+{
+    @class = "btn btn-block btn-default btn-lg"
+        + (link.TipoEventoId == ViewBag.tipoEventoSelecionado ? " btn-primary" : "")
+})
+}

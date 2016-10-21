@@ -1,0 +1,9 @@
+﻿@model EncontroCampistas.Biblioteca.Entidades.Carrinho
+
+<div class="navbar-right">
+    @Html.ActionLink("Visualizar/Encerrar Inscrições", "Index", "Carrinho", new { returnUrl = Request.Url.PathAndQuery }, new { @class = "btn btn-default navbar-btn" })
+</div>
+<div class="navbar-text navbar-right">
+    <b>Suas incrições:</b>
+    @Model.ItensCarrinho.Count item(s),
+</div>

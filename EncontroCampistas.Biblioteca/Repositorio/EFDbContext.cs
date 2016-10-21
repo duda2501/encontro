@@ -13,10 +13,17 @@ namespace EncontroCampistas.Biblioteca.Repositorio
     {
         public DbSet<Campista> Campistas { get; set; }
 
+        public DbSet<Evento> Eventos { get; set; }
+
+        public DbSet<TipoEvento> TipoEventos { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            modelBuilder.HasDefaultSchema("public");
             modelBuilder.Entity<Campista>().ToTable("Campistas");
+            modelBuilder.Entity<Evento>().ToTable("Eventos");
+            modelBuilder.Entity<TipoEvento>().ToTable("TipoEvento");
         }
     }
 }

@@ -1,17 +1,19 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EncontroCampistas.Biblioteca.Entidades
 {
+    [Table("Campistas", Schema = "public")]
     public class Campista
     {
         #region propriedades  
         [Key]
-        public int CampistaID { get; set; }
+        public int CampistaId { get; set; }
         
         public string Nome { get; set; }
 
-        public string Cep { get; set; }
+        public string CEP { get; set; }
 
         public string Endereco { get; set; }
 
@@ -21,7 +23,7 @@ namespace EncontroCampistas.Biblioteca.Entidades
         
         public string Cidade { get; set; }
         
-        public DateTime DataNascimento { get; set; }
+        public DateTime? DataNascimento { get; set; }
         
         public string Telefone { get; set; }
         
@@ -35,17 +37,11 @@ namespace EncontroCampistas.Biblioteca.Entidades
         
         public bool Crismado { get; set; }
         
-        public Byte[] Foto { get; set; }
-        
-        public int Acampamento { get; set; }
-        
-        public decimal Altura { get; set; }
+        public decimal? Altura { get; set; }
         
         public string Complemento { get; set; }
         
         public string Email { get; set; }
-        
-        public string FormaPagamento { get; set; }
         
         public string Medicamentos { get; set; }
         
@@ -59,13 +55,9 @@ namespace EncontroCampistas.Biblioteca.Entidades
         
         public string FonePai { get; set; }
         
-        public bool Pago { get; set; }
-        
         public string Paroquia { get; set; }
         
-        public decimal Peso { get; set; }
-        
-        public string Pratos { get; set; }
+        public decimal? Peso { get; set; }
         
         public string Responsavel { get; set; }
         
@@ -76,10 +68,14 @@ namespace EncontroCampistas.Biblioteca.Entidades
         public string TamanhoCamiseta { get; set; }
         
         public string TipoCamiseta { get; set; }
-        
-        public int Tribo { get; set; }
-        
-        public double ValorPago { get; set; }
+
+        public string ParoquiaAcampamento { get; set; }
+
+        public string TipoAcampamento { get; set; }
+
+        public int? AnoAcampamento { get; set; }
+
+        public string  Pastoral { get; set; }
         #endregion
 
         #region Construtores
