@@ -1,0 +1,49 @@
+﻿@model EncontroCampistas.Biblioteca.Entidades.Campista
+
+@{
+    ViewBag.Title = "Alterar " + Model.Nome;
+    Layout = "~/Areas/Administrativo/Views/Shared/_AdministrativoLayout.cshtml";
+}
+
+<script type="text/javascript">
+    $(function () {
+        // This will make every element with the class "date-picker" into a DatePicker element
+        $('.date-picker').datepicker();
+    })
+</script>
+
+<div class="panel">
+    <div class="panel-heading">
+        <h3>Alterar @Model.Nome</h3>
+    </div>
+    @*Informar senão ao criar não irá achar*@
+    @using (Html.BeginForm("Alterar", "Campista", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="panel-body">
+            @Html.HiddenFor(m => m.CampistaId)
+            @foreach (var property in ViewData.ModelMetadata.Properties)
+            {
+                switch (property.PropertyName)
+                {
+                    case "CampistaId":
+                        break;
+                    default:
+                        <div class="form-group">
+                            <label>
+                                @(property.DisplayName ?? property.PropertyName)
+                            </label>
+                            @Html.TextBox(property.PropertyName, null, new { @class = "form-control" })
+                            @Html.ValidationMessage(property.PropertyName)
+                        </div>
+
+                        break;
+                }
+            }
+        </div>
+
+        <div class="panel-footer">
+            <input type="submit" value="Salvar" class="btn btn-primary" />
+            @Html.ActionLink("Cancelar e retornar", "Index", null, new { @class = "btn btn-default" })
+        </div>
+    }
+</div>

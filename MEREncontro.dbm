@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+         Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="0.9.0-alpha" last-position="0,0" last-zoom="1"
+	 default-schema="public" default-owner="postgres">
+<database name="encontrocampistas" encoding="UTF8" lc-collate="Portuguese_Brazil" lc-ctype="Portuguese_Brazil">
+	<role name="postgres"/>
+	<tablespace name="pg_default"/>
+</database>
+
+<schema name="public" rect-visible="true" fill-color="#e1e1e1" sql-disabled="true">
+</schema>
+
+<sequence name="Campistas_CampistaId_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="9223372036854775807"
+	 cache="1" cycle="false">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="Campistas">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="0" y="23"/>
+	<column name="CampistaId" not-null="true" sequence="public.&quot;Campistas_CampistaId_seq&quot;">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="Nome" not-null="true">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="Endereco">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="Numero">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="Bairro">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="Complemento">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="DataNascimento">
+		<type name="date" length="0"/>
+	</column>
+	<column name="Telefone">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="Celular">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="RG">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="Peso">
+		<type name="numeric" length="10" precision="2"/>
+	</column>
+	<column name="Altura">
+		<type name="numeric" length="10" precision="2"/>
+	</column>
+	<column name="TipoCamiseta">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="TamanhoCamiseta">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="NomeMae">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="FoneMae">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="NomePai">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="FonePai">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="Responsavel">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="FoneResponsavel">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="Paroquia">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="Batizado">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="PrimeiraComunhao">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="Crismado">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="Casado">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="Email">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="Medicamentos">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="CEP">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="Cidade">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="Sexo">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="ParoquiaAcampamento">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="TipoAcampamento">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="AnoAcampamento">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="Pastoral">
+		<type name="character varying" length="0"/>
+	</column>
+	<constraint name="PKCampista" type="pk-constr" table="public.&quot;Campistas&quot;">
+		<columns names="CampistaId" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="Eventos_EventoId_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="9223372036854775807"
+	 cache="1" cycle="false">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="Eventos">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="400" y="20"/>
+	<column name="EventoId" not-null="true" sequence="public.&quot;Eventos_EventoId_seq&quot;">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="Descricao" not-null="true">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="DataHoraRealizacao">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="Local">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="Duracao">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="TipoEvento">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="PKEvento" type="pk-constr" table="public.&quot;Eventos&quot;">
+		<columns names="EventoId" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="TipoEvento_TipoEventoId_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="9223372036854775807"
+	 cache="1" cycle="false">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="TiposEventos">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="820" y="23"/>
+	<column name="TipoEventoId" not-null="true" sequence="public.&quot;TipoEvento_TipoEventoId_seq&quot;">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="DescricaoTipoEvento" not-null="true">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="PermiteInscricao">
+		<type name="boolean" length="0"/>
+	</column>
+	<constraint name="PKTiposEventos" type="pk-constr" table="public.&quot;TiposEventos&quot;">
+		<columns names="TipoEventoId" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="Caravanas">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="340" y="480"/>
+	<column name="CaravanaId" not-null="true" sequence="public.&quot;Caravanas_CaravanaId_seq&quot;">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="Nome" not-null="true">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="Cidade" not-null="true">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="Fone">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="Responsavel">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="Email">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="NumeroPessoas">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="NumeroOnibus">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="PKCaravana" type="pk-constr" table="public.&quot;Caravanas&quot;">
+		<columns names="CaravanaId" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="Usuarios">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="380" y="340"/>
+	<column name="login" not-null="true">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="Senha" not-null="true">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="Nome" not-null="true">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="CampistaId">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="PKUsuario" type="pk-constr" table="public.&quot;Usuarios&quot;">
+		<columns names="login" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="GruposUsuarios_GrupoUsuarioId_Seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="2147483647"
+	 cache="1" cycle="false">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="GruposUsuarios">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="800" y="240"/>
+	<column name="GrupoUsuarioId" not-null="true" sequence="public.&quot;GruposUsuarios_GrupoUsuarioId_Seq&quot;">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="Nome" not-null="true">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="EditaCampista">
+		<type name="bool" length="0"/>
+	</column>
+	<column name="AcessaParoquia">
+		<type name="bool" length="0"/>
+	</column>
+	<column name="AcessaTodasParoquias">
+		<type name="bool" length="0"/>
+	</column>
+	<constraint name="PKGruposUsuarios" type="pk-constr" table="public.&quot;GruposUsuarios&quot;">
+		<columns names="GrupoUsuarioId" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="UsuariosGruposUsuarios">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="420" y="260"/>
+	<column name="GrupoUsuarioId" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="login" not-null="true">
+		<type name="character varying" length="0"/>
+	</column>
+	<constraint name="PKUsuariosGruposUsuarios" type="pk-constr" table="public.&quot;UsuariosGruposUsuarios&quot;">
+		<columns names="login,GrupoUsuarioId" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="Inscricoes">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="340" y="180"/>
+	<column name="CampistaId" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="EventoId" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="PKInscricoes" type="pk-constr" table="public.&quot;Inscricoes&quot;">
+		<columns names="CampistaId,EventoId" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<constraint name="FKEventoxTipoEvento" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.&quot;TiposEventos&quot;" table="public.&quot;Eventos&quot;">
+	<columns names="TipoEvento" ref-type="src-columns"/>
+	<columns names="TipoEventoId" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="FKUsuariosxCampistas" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.&quot;Campistas&quot;" table="public.&quot;Usuarios&quot;">
+	<columns names="CampistaId" ref-type="src-columns"/>
+	<columns names="CampistaId" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="FKUsuariosGruposUsuariosxUsuarios" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.&quot;Usuarios&quot;" table="public.&quot;UsuariosGruposUsuarios&quot;">
+	<columns names="login" ref-type="src-columns"/>
+	<columns names="login" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="FKUsuariosGruposUsuariosxGruposUsuarios" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.&quot;GruposUsuarios&quot;" table="public.&quot;UsuariosGruposUsuarios&quot;">
+	<columns names="GrupoUsuarioId" ref-type="src-columns"/>
+	<columns names="GrupoUsuarioId" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="FKInscricoesxCampistas" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.&quot;Campistas&quot;" table="public.&quot;Inscricoes&quot;">
+	<columns names="CampistaId" ref-type="src-columns"/>
+	<columns names="CampistaId" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="FKInscricoesxEventos" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.&quot;Eventos&quot;" table="public.&quot;Inscricoes&quot;">
+	<columns names="EventoId" ref-type="src-columns"/>
+	<columns names="EventoId" ref-type="dst-columns"/>
+</constraint>
+
+<relationship name="&quot;rel_Eventos_TipoEvento&quot;" type="relfk"
+	 custom-color="#83af1f"
+	 src-table="public.&quot;Eventos&quot;"
+	 dst-table="public.&quot;TiposEventos&quot;"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_UsuariosGruposUsuarios_Usuarios" type="relfk"
+	 src-table="public.&quot;UsuariosGruposUsuarios&quot;"
+	 dst-table="public.&quot;Usuarios&quot;"
+	 src-required="false" dst-required="false">
+	<label ref-type="dst-label">
+		<position x="40.09" y="-60.2"/>
+	</label>
+	<label ref-type="name-label">
+		<position x="0" y="0"/>
+	</label>
+</relationship>
+
+<relationship name="&quot;rel_UsuariosGruposUsuarios_GruposUsuarios&quot;" type="relfk"
+	 src-table="public.&quot;UsuariosGruposUsuarios&quot;"
+	 dst-table="public.&quot;GruposUsuarios&quot;"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="&quot;rel_Usuarios_Campistas&quot;" type="relfk"
+	 src-table="public.&quot;Usuarios&quot;"
+	 dst-table="public.&quot;Campistas&quot;"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="&quot;rel_Inscricoes_Campistas&quot;" type="relfk"
+	 src-table="public.&quot;Inscricoes&quot;"
+	 dst-table="public.&quot;Campistas&quot;"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="&quot;rel_Inscricoes_Eventos&quot;" type="relfk"
+	 src-table="public.&quot;Inscricoes&quot;"
+	 dst-table="public.&quot;Eventos&quot;"
+	 src-required="false" dst-required="false"/>
+
+</dbmodel>

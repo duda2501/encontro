@@ -20,10 +20,10 @@ namespace EncontroCampistas.Biblioteca.Repositorio
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-            modelBuilder.HasDefaultSchema("public");
+            //modelBuilder.HasDefaultSchema("public");
             modelBuilder.Entity<Campista>().ToTable("Campistas");
             modelBuilder.Entity<Evento>().ToTable("Eventos");
-            modelBuilder.Entity<TipoEvento>().ToTable("TipoEvento");
+            modelBuilder.Entity<TipoEvento>().ToTable("TipoEventos");
         }
     }
 }

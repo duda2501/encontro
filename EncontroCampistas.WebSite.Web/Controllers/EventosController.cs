@@ -1,6 +1,7 @@
 ﻿using EncontroCampistas.Biblioteca.Repositorio;
 using EncontroCampistas.WebSite.Web.Models;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 
 namespace EncontroCampistas.WebSite.Web.Controllers
@@ -17,7 +18,7 @@ namespace EncontroCampistas.WebSite.Web.Controllers
             EventosViewModel model = new EventosViewModel
             {
                 Eventos = _repositorio.Eventos
-                .Where(e => tipoEvento == -1 || e.TipoEvento == tipoEvento)
+                .Where(e => tipoEvento == -1 || e.iTipoEvento == tipoEvento)
                 .OrderBy(e => e.Descricao)
                 .Skip((pagina - 1) * EventosPorPagina)
                 .Take(EventosPorPagina),
